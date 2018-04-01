@@ -1,3 +1,5 @@
+import random
+
 from django import forms
 from django.shortcuts import render, get_object_or_404
 
@@ -22,9 +24,13 @@ def mineral_detail(request, mineral_id):
 
     mineral_form = MineralForm(instance=mineral)
 
+    all_mineral_count = Mineral.objects.all().count()
+    rand_num = random.randint(1, all_mineral_count)
+
     context = {
         'mineral': mineral,
         'mineral_form': mineral_form,
+        'rand_mineral': rand_num,
     }
 
     return render(request, 'detail.html', context)

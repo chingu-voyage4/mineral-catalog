@@ -37,5 +37,8 @@ class Mineral(models.Model):
     specific_gravity = models.CharField(max_length=300, blank=True)
     group = models.ForeignKey(Group, on_delete=models.CASCADE)
 
+    def first_name(self):
+        return self.name.split(", ")[0]
+
     def __str__(self):
         return self.name
