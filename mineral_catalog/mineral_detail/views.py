@@ -6,6 +6,8 @@ from django.shortcuts import render, get_object_or_404
 from .models import Mineral
 
 
+# TODO: Make sure all pictures show correctly
+
 def mineral_detail(request, mineral_id):
     mineral = get_object_or_404(Mineral, pk=mineral_id)
 
@@ -16,7 +18,7 @@ def mineral_detail(request, mineral_id):
                       'unit_cell', 'color', 'crystal_symmetry',
                       'luster', 'streak', 'diaphaneity', 'optical_prop',
                       'refractive_index', 'crystal_habit',
-                      'specific_gravity', 'group']
+                      'specific_gravity']
             labels = {
                 'strunz': 'Strunz Classification',
                 'mohs_scale': 'Mohs Scale Hardness'
