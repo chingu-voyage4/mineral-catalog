@@ -4,7 +4,8 @@
 <div class="grid-100 mineral__container">
     <h1 class="mineral__name">{{ mineral.name }}</h1>
     <div class="mineral__image-bg">
-        <img class="mineral__image" src="{{ mineral.image_filename }}">
+        {% load static %}
+        <img class="mineral__image" src="{% static mineral.static_url %}">
         <p class="mineral__caption">{{ mineral.image_caption }}</p>
     </div>
     <div class="mineral__table-container">

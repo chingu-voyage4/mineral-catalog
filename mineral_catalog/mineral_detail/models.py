@@ -40,5 +40,14 @@ class Mineral(models.Model):
     def first_name(self):
         return self.name.split(", ")[0]
 
+    def wikimedia_url(self):
+        wikimedia_beginning = 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/'
+        url_no_size = '-'.join(self.image_filename.split('-')[1:])
+
+        return wikimedia_beginning + url_no_size + '/' + self.image_filename
+
+    def static_url(self):
+        return 'images/minerals/' + self.name.lower() + '.jpg'
+
     def __str__(self):
         return self.name
