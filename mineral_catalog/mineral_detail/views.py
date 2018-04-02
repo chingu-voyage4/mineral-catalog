@@ -6,8 +6,6 @@ from django.shortcuts import render, get_object_or_404
 from .models import Mineral
 
 
-# TODO: Make sure all pictures show correctly
-
 def mineral_detail(request, mineral_id):
     mineral = get_object_or_404(Mineral, pk=mineral_id)
 

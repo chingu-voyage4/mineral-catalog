@@ -7,7 +7,7 @@ from .models import Mineral, Group, Category
 class MineralModelTests(TestCase):
 
     def setUp(self):
-        self.new_mineral.objects.create(name='Test')
+        self.new_mineral = Mineral.objects.create(name='Test')
         self.new_mineral.save()
 
     def test_name(self):

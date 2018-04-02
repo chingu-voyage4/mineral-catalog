@@ -10,7 +10,7 @@ from mineral_detail.models import Mineral
 
 def index(request):
     all_minerals = Mineral.objects.all()
-    paginator = Paginator(all_minerals, 100)
+    paginator = Paginator(all_minerals, 101)
 
     rand_num = random.randint(1, all_minerals.count())
 
